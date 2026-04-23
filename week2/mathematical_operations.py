@@ -1,31 +1,56 @@
 import math
-def add(a, b):
-    return a + b
 
-def subtract(a, b):
-    return a - b
 
-def multiply(a, b):
-    return a * b    
+class Calculator:
 
-def divide(a, b): 
-    if b == 0:
-        raise ValueError("Division by zero ")
-    return a / b
+    def __init__(self, a=0, b=0):
+        self.a = a
+        self.b = b
 
-def power(a, b):
-    return math.pow(a, b)
+    def add(self):
+        return self.a + self.b
+
+    def subtract(self):
+        return self.a - self.b
+
+    def multiply(self):
+        return self.a * self.b    
+
+    def divide(self): 
+        if self.b == 0:
+            raise ValueError("Division by zero")
+        return self.a / self.b
+
+
+def get_numbers():
+    a = float(input("Enter first number: "))
+    b = float(input("Enter second number: "))
+    return a, b
+
+def menu_select():
+    print("\n--- Calculator Menu choose ---")
+    print("1. Add")
+    print("2. Subtract")
+    print("3. Multiply")
+    print("4. Divide") 
 
 if __name__ == "__main__":
-    num1 = 10
-    num2 = 5
+    menu_select()
+    choice = input("Choose an option: ")
     
-    print("num1 = 10, num2 = 5")
-    print("add:", add(num1, num2))
-    print("subtract:", subtract(num1, num2))
-    print("multiply:", multiply(num1, num2))
-    print("divide:", divide(num1, num2))
-    print("power:", power(num1, num2))
+    a, b = get_numbers()
+    calc = Calculator(a, b)
+
+    if choice == "1":
+        print(calc.add())
+    elif choice == "2":
+        print(calc.subtract())
+    elif choice == "3":
+        print(calc.multiply())
+    elif choice == "4":
+        print(calc.divide())
+    else:
+        print("Invalid choice")
 
 
 
