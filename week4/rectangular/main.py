@@ -1,5 +1,5 @@
 # main.py
-from rectangle import Rectangle
+from week4.rectangular.rectangle import Rectangle
 
 def main():
     print("Rectangle Area and Perimeter Calculator")
