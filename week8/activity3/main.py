@@ -16,8 +16,7 @@ class Flight:
         print(f"Flight Number: {self.flight_number}")
         print(f"From: {self.departure_location} → To: {self.destination_location}")
         print(f"Departure: {self.departure_time} | Arrival: {self.arrival_time}")
-
-    # 修正拼写错误，并加上 self 参数
+ 
     def domestic_or_international(self):
         pass    
 
@@ -57,9 +56,7 @@ class DomesticFlight(NewZealandFlight):
         print(f"Destination NZ Postal Code: {self.destination_location_nz_postal_code}")
 
     def flight(self):
-        print(f"I can fly domestically!")
-
-    # 为 DomesticFlight 实现这个方法
+        print(f"I can fly domestically!") 
     def domestic_or_international(self):
         print("This is a domestic flight.")
 
@@ -97,7 +94,7 @@ def main():
         destination_location_nz_postal_code="6011"
     )
     dom_flight.display_core_info()  
-    dom_flight.domestic_or_international()  # 不需要传 dom_flight
+    dom_flight.domestic_or_international()   
     print(dom_flight.if_maori_language_broadcasting())
     print()
 
@@ -116,7 +113,7 @@ def main():
     )
     int_flight.display_core_info() 
     int_flight.show_visa_required() 
-    int_flight.domestic_or_international()  # 不需要传 int_flight
+    int_flight.domestic_or_international()  
     print(int_flight.if_maori_language_broadcasting())
 
 if __name__ == "__main__":
