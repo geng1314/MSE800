@@ -1,10 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 def hello_flask():
-    return "<p style='color: red; background-color: green;'>Hello, flask!</p>"
+    return render_template("index.html")
 
 @app.route("/bye")
 def goodbye_flask():
